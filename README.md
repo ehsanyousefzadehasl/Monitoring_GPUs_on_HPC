@@ -1,12 +1,19 @@
-# How to connect to ITU's HPC cluster
+## How to connect to ITU's HPC cluster
 To connect to ITU's HPC cluster, you need your ITU username and SSH access:
-
 
 ```bash
 ssh <your_username>@hpc.itu.dk
 ```
 
 Use your university email password to log in, the same as for other ITU systems.
+
+## Clone this repository to your local folder at ITU HPC
+
+```bash
+git clone https://github.com/ehsanyousefzadehasl/Monitoring_GPUs_on_HPC.git
+```
+
+# How to write a job at HPC
 
 The ITU HPC cluster uses SLURM as its scheduler/resource manager. SLURM handles tasks submitted by users and allocates the specified resources based on the task description. To execute tasks on the cluster, you must create a task script like the following example:
 
@@ -15,7 +22,7 @@ The ITU HPC cluster uses SLURM as its scheduler/resource manager. SLURM handles 
 
 #SBATCH --job-name=cuda_test_job_name      # Job name
 #SBATCH --output=cuda_test_output_name     # output file name
-#SBATCH --cpus-per-task=1                  # Schedule 8 cores (includes hyperthreading)
+#SBATCH --cpus-per-task=2                  # Schedule 2 cores (includes hyperthreading)
 #SBATCH --gres=gpu                         # Schedule a GPU, it can be on 2 gpus like gpu:2
 #SBATCH --time=00:05:00                    # Run time (hh:mm:ss)
 #SBATCH --partition=scavenge               # Run on any permitted queue that has availability
@@ -57,7 +64,7 @@ To monitor various hardware metrics during program execution, one can use tools 
 ## To execute the job
 
 ```bash
-sbatch myjobv2.job
+sbatch itgt.job
 ```
 
 ## To monitor the job status
