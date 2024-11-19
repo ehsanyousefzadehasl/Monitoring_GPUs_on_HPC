@@ -9,7 +9,7 @@ __global__ void helloWorld() {
 int main() {
         // launch the GPU kernel
 
-        for(int i = 0; i < 100000; ++i){
+        for(int i = 0; i < 1000; ++i){
             helloWorld<<<2048, 1024>>>();
         }
         
