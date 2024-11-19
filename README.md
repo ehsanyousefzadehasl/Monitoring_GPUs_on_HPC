@@ -34,7 +34,7 @@ nvcc test_cuda.cu -o test_cuda
 
 dcgmi dmon -e 155,156,200,201,203,204,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012 > dcgmi-log.out &
 
-nvidia-smi --query-gpu=gpu_name,pstate,timestamp,utilization.gpu,utilization.memory,memory.total,memory.used --format=csv -l 1 -f nvidia-smi-log.out &
+nvidia-smi --query-gpu=gpu_name,pstate,timestamp,utilization.gpu,memory.total,memory.used --format=csv -l 1 -f nvidia-smi-log.out &
 
 ./test_cuda
 ```
