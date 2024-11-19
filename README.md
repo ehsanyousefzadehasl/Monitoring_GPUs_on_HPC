@@ -59,7 +59,7 @@ module avail
 ```
 
 ## Monitoring CPUs and GPUs
-To monitor various hardware metrics during program execution, one can use tools such as 'top' for CPUs and 'nvidia-smi' and dcgmi' for GPUs, which you can also see in the example above.
+To monitor various hardware metrics during program execution, one can use tools such as top (https://man7.org/linux/man-pages/man1/top.1.html) for CPUs and nvidia-smi (https://docs.nvidia.com/deploy/nvidia-smi/index.html) and dcgmi (https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html) for GPUs, which you can also see in the example above.
 
 ## To execute the job
 
