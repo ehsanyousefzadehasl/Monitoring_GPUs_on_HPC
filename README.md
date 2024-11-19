@@ -1,5 +1,5 @@
 ## How to connect to ITU's HPC cluster
-To connect to ITU's HPC cluster, you need your ITU username and SSH access:
+To connect to ITU's HPC cluster ((https://hpc.itu.dk/), you need to be in ITU network and use your ITU username and SSH access:
 
 ```bash
 ssh <your_username>@hpc.itu.dk
