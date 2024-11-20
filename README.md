@@ -26,7 +26,7 @@ The ITU HPC cluster uses SLURM as its scheduler/resource manager. SLURM handles 
 #SBATCH --gres=gpu                         # Schedule a GPU, it can be on 2 gpus like gpu:2
 #SBATCH --time=00:05:00                    # Run time (hh:mm:ss)
 #SBATCH --partition=scavenge               # Run on any permitted queue that has availability
-#SBATCH --exclusive			                   # Exclusive access to the server
+#SBATCH --exclusive                        # Exclusive access to the server
 
 module load CUDA/12.1.1
 
