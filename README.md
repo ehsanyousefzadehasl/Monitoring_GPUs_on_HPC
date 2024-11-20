@@ -26,7 +26,7 @@ The ITU HPC cluster uses SLURM as its scheduler/resource manager. SLURM handles 
 #SBATCH --gres=gpu                         # Schedule a GPU, it can be on 2 gpus like gpu:2
 #SBATCH --time=00:05:00                    # Run time (hh:mm:ss)
 #SBATCH --partition=scavenge               # Run on any permitted queue that has availability
-#SBATCH --exclusive			   # Exclusive access to the server
+#SBATCH --exclusive			                   # Exclusive access to the server
 
 module load CUDA/12.1.1
 
@@ -59,7 +59,11 @@ module avail
 ```
 
 ## Monitoring CPUs and GPUs
-To monitor various hardware metrics during program execution, one can use tools such as top (https://man7.org/linux/man-pages/man1/top.1.html) for CPUs and nvidia-smi (https://docs.nvidia.com/deploy/nvidia-smi/index.html) and dcgmi (https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html) for GPUs, which you can also see in the example above.
+To monitor various hardware metrics during program execution, one can use tools such as top (https://man7.org/linux/man-pages/man1/top.1.html) for CPUs and nvidia-smi (https://docs.nvidia.com/deploy/nvidia-smi/index.html) and dcgmi (https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html) for GPUs, which you can also see in the example above. Unfortunately, dcgm isn't supported by all the GPUs in ITU's HPC cluster, so if you want to see any output there, you should add the following line in the beginning of your job script.
+
+```bash
+#SBATCH --constraint="gpu_v100|gpu_a30|gpu_a100_40gb|gpu_a100_80gb|gpu_h100|gpu_a100_40gb"
+```
 
 ## To execute the job
 
